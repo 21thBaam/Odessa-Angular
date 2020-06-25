@@ -11,11 +11,6 @@ const routes: Routes = [
     component: ConsultarAdministradorClienteComponent
   },
   {
-    path: '',
-    redirectTo: 'consultar',
-    pathMatch: 'full'
-  },
-  {
     path: 'alta',
     component: AgregarEditarAdministradorClienteComponent
   },
@@ -26,6 +21,11 @@ const routes: Routes = [
   {
     path: 'resumen',
     component: ResumenAdministradorComponent
+  },
+  {
+    path: '',
+    redirectTo: 'consultar',
+    pathMatch: 'full'
   },
   {
     path: '**',
