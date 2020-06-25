@@ -1,0 +1,168 @@
+<div class="add-edit">
+    <div class="title">
+        <p>{{texto_accion}}</p> <!-- Modificar dependiendo Alta o Editar -->
+        <hr>
+        <p class="subtitle"><span class="icon-uni">&#9205;</span>Ingresa los datos del usuario en los campos correspondientes</p>
+    </div>
+
+    <form #formUsuarios="ngForm" (submit)="onSubmit()">
+        <div class="container-column">
+            <div class="column">
+                <div class="form-group">
+                    <label>Tipo de usuario</label>
+                    <select [(ngModel)]="usuario.idTipoUsuario" name="idTipoUsuario" #idTipoUsuario="ngModel" class="form-control" required>
+                        <option disabled selected>Selecciona tipo de usuario</option>
+                        <option *ngFor="let tipo of tipos" value="{{tipo.idTipoUsuario}}">{{tipo.descripcion}}</option>
+                    </select>
+                </div>
+                <div *ngIf="idTipoUsuario.invalid && (idTipoUsuario.dirty || idTipoUsuario.touched)" class="alert alert-danger">
+                    <div *ngIf="idTipoUsuario.errors.required">Seleccione tipo de usuario</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Número único Usuario</label>
+                    <input class="form-control" placeholder="Selecciona" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Cliente</label>
+                    <input class="form-control" placeholder="Selecciona" disabled>
+                </div>
+            </div>
+            <div class="column">
+                <div class="form-group">
+                    <label>Áreas</label>
+                    <input class="form-control" placeholder="Selecciona" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Número de Trabajador</label>
+                    <input class="form-control" [(ngModel)]="usuario.numeroTrabajador" name="numeroTrabajador" #numeroTrabajador="ngModel" placeholder="Ingresa numero de trabajador" required>
+                </div>
+                <div *ngIf="numeroTrabajador.invalid && (numeroTrabajador.dirty || numeroTrabajador.touched)" class="alert alert-danger">
+                    <div *ngIf="numeroTrabajador.errors.required">Ingrese Número de Trabajador</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Elemento de Estructura</label>
+                    <input class="form-control" placeholder="Selecciona" disabled>
+                </div>
+            </div>
+            <div class="column">
+                <div class="form-group" style="visibility: hidden;">
+                    <label>Estatus</label>
+                    <input class="form-control" placeholder="Selecciona" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Estatus</label>
+                    <select  name="idEstatus" [(ngModel)]="usuario.idEstatus" #idEstatus="ngModel" class="form-control" required>
+                        <option hidden selected value="">Selecciona estatus</option>
+                        <option *ngFor="let estatu of estatus" value="{{estatu.idEstatus}}">{{estatu.nombre}}</option>
+                    </select>
+                </div>
+                <div *ngIf="idEstatus.invalid && (idEstatus.dirty || idEstatus.touched)" class="alert alert-danger">
+                    <div *ngIf="idEstatus.errors.required">Seleccione tipo de usuario</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Usuario</label>
+                    <input class="form-control" [(ngModel)]="usuario.usuario" name="usuario" #usuarioref="ngModel" placeholder="Ingresa numero de usuario" required>
+                </div>
+                <div *ngIf="usuarioref.invalid && (usuarioref.dirty || usuarioref.touched)" class="alert alert-danger">
+                    <div *ngIf="usuarioref.errors.required">Ingrese Usuario</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="title">
+            <p class="subtitle">Ingresa los datos del usuario en los campos correspondientes</p>
+        </div>
+    
+        <div class="container-column">
+            <div class="column">
+                <div class="form-group">
+                    <label>Nombre(s)</label>
+                    <input class="form-control" [(ngModel)]="usuario.nombre" #nombre="ngModel" name="nombre" placeholder="Ingresa nombre" required>
+                </div>
+                <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert alert-danger">
+                    <div *ngIf="nombre.errors.required">Ingrese Nombre</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Correo Oficina</label>
+                    <input type="email" class="form-control" [(ngModel)]="usuario.correo" #correo="ngModel" name="correo" placeholder="name@example.com" required>
+                </div>
+                <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="alert alert-danger">
+                    <div *ngIf="correo.errors.required">Ingrese Correo</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Móvil 1</label>
+                    <input class="form-control" [(ngModel)]="usuario.movil1" #movil1="ngModel" name="movil1" placeholder="Ingresa móvil 1" required>
+                </div>
+                <div *ngIf="movil1.invalid && (movil1.dirty || movil1.touched)" class="alert alert-danger">
+                    <div *ngIf="movil1.errors.required">Ingrese Móvil 1</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha de Nacimiento</label>
+                    <input class="form-control" type="date" id="example-date-input">
+                </div>
+            </div>
+            <div class="column">
+                <div class="form-group">
+                    <label>Apellido Paterno</label>
+                    <input class="form-control" [(ngModel)]="usuario.apellidoPaterno" #apellidoPaterno="ngModel" name="apellidoPaterno" placeholder="Ingresa apellido paterno" required>
+                </div>
+                <div *ngIf="apellidoPaterno.invalid && (apellidoPaterno.dirty || apellidoPaterno.touched)" class="alert alert-danger">
+                    <div *ngIf="apellidoPaterno.errors.required">Ingrese Apellido Paterno</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Teléfono Oficina</label>
+                    <input class="form-control" [(ngModel)]="usuario.telefonoOficina" #telefonoOficina="ngModel" name="telefonoOficina" placeholder="Ingresa teléfono oficina" required>
+                </div>
+                <div *ngIf="telefonoOficina.invalid && (telefonoOficina.dirty || telefonoOficina.touched)" class="alert alert-danger">
+                    <div *ngIf="telefonoOficina.errors.required">Ingrese Teléfono Oficina</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Móvil 2</label>
+                    <input class="form-control" [(ngModel)]="usuario.movil2" #movil2="ngModel" name="movil2" placeholder="Ingresa móvil 2" required>
+                </div>
+                <div *ngIf="movil2.invalid && (movil2.dirty || movil2.touched)" class="alert alert-danger">
+                    <div *ngIf="movil2.errors.required">Ingrese Móvil 2</div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="form-group">
+                    <label>Apellido Materno</label>
+                    <input class="form-control" [(ngModel)]="usuario.apellidoMaterno" #apellidoMaterno="ngModel" name="apellidoMaterno" placeholder="Ingresa apellido materno" required>
+                </div>
+                <div *ngIf="apellidoMaterno.invalid && (apellidoMaterno.dirty || apellidoMaterno.touched)" class="alert alert-danger">
+                    <div *ngIf="apellidoMaterno.errors.required">Ingrese Apellido Materno</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Extensión Oficina</label>
+                    <input class="form-control" [(ngModel)]="usuario.extension" #extension="ngModel" name="extension" placeholder="Ingresa extensión oficina" required>
+                </div>
+                <div *ngIf="extension.invalid && (extension.dirty || extension.touched)" class="alert alert-danger">
+                    <div *ngIf="extension.errors.required">Ingrese Extensión Oficina</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Teléfono Casa</label>
+                    <input class="form-control" [(ngModel)]="usuario.telefonoCasa" #telefonoCasa="ngModel" name="telefonoCasa" placeholder="Ingresa teléfono casa" required>
+                </div>
+                <div *ngIf="telefonoCasa.invalid && (telefonoCasa.dirty || telefonoCasa.touched)" class="alert alert-danger">
+                    <div *ngIf="telefonoCasa.errors.required">Ingrese Teléfono Casa</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="column cnt">
+            <button type="button" (click)="cancel()" class="btn cancel">Cancelar</button>
+            <button type="submit" [disabled]="!formUsuarios.form.valid"  class="btn guardar">Guardar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,90 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    background-color: #9c9c9c;
+}
+
+.path{
+    width: 90%;
+    height: 5vh;
+    margin: 0 auto 0 auto;
+}
+
+.info{
+    width: 90%;
+    height: auto;
+    border-radius: 5px;
+    margin: 0 auto 1% auto;
+    background-color: white;
+}
+
+.title{
+    padding: 1% 3% 0 3%;
+    color: rgb(237, 125, 49);
+    font-weight: 500;
+}
+
+.title hr{
+    margin: 0.5% 0 0.5% 0;
+}
+
+.title p{
+    margin: 0;
+}
+
+.title .subtitle{
+    color: grey;
+    font-weight: 400;
+    padding: 0 0 0 2%;
+}
+
+.title-table{
+    background-color: rgb(237, 125, 49);
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1% 0 1%;
+}
+
+.title-table p{
+    margin: auto 0 auto 0;
+}
+
+.info-table{
+    padding: 1% 1% 1% 1%;
+}
+
+.table-icon{
+    display: flex;
+    height: auto;
+    width: auto;
+}
+
+.title-table-icon{
+    border-left: 1px solid #bbb;
+    padding: 0 0.5vw 0 0.5vw;
+    font-size: 24px;
+}
+
+.table i{
+    cursor: pointer;
+}
+
+.nav-pagination{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1% 1% 0;
+}
+
+.icon-uni{
+    color: rgb(237, 125, 49);
+    font-size: 1.3vw;
+}
+
+.search input{
+    border: 0;
+    padding: 0;
+}

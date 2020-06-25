@@ -1,0 +1,109 @@
+.navbar{
+    background-color: rgb(255, 130, 1);
+    height: 8vh;
+    z-index: 1;
+    overflow: hidden;
+    padding: 0;
+    padding-inline-end: 40px;
+}
+
+.navbar-d{
+    background-color: rgb(118, 119, 121);
+    height: 1.5vh;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: black;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+}
+
+nav li{
+    margin: auto 0 auto 0;
+    color: black;
+    border-left: 1px solid #bbb;
+    font-size: 1.7vw;
+    height: 8vh;
+    margin: auto 0 auto 0;
+    padding: 1vh 5px 0 5px;
+}
+
+nav li:hover {
+    background-color: #9c9c9c;
+}
+
+.h-form{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid grey;
+    box-shadow: 3px 5px #888888;
+    height: 18vh;
+    width: 90%;
+    margin: 0 auto 0 auto;
+    border-radius: 25px;
+    z-index: 0;
+}
+
+.h2-form{
+    height: 8vh;
+}
+
+.h3-form{
+    height: 9vh;
+    margin: 0 2vw 0 2vw;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.h3-form img{
+    margin: auto 0 auto 0;
+    width: 13vw;
+    height: 7vh;
+}
+
+.h-nav ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.h-nav li{
+    color: black;
+    border-left: 1px solid #bbb;
+    font-size: 1.2vw;
+    height: 10vh;
+    margin: auto 0 auto 0;
+    padding: 1vh 5px 0 5px;
+    text-align: center;
+}
+
+.h-nav li:hover{
+    background-color: #9c9c9c;
+}
+
+.h-nav a{
+    text-decoration: none;
+    color: black;
+}
+
+.h-nav i{
+    font-size: 30px;
+}
+
+.fill{
+    height: 10vh;
+    width: 100%;
+}
+
+li{
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}
